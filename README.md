@@ -1,38 +1,55 @@
-Computational Argumentation 2022
-================================================
+# Argumentative Units Classification
 
+This repository contains Python code for classifying argumentative units using machine learning techniques. The tasks involved in this project include choosing text features, extracting features from the data, choosing and training a machine learning model, and saving the results to a file.
 
-This directory presents the main structure we expect you to use for handing in the assignment submission. This file describes the expected usage of the main Python file and the usage of the docker image.
+## Tasks
 
+1. **Choose Text Features**
+    - Select text features to be used in classification, such as n-grams, POS (Part-of-Speech), and token statistics.
 
-## Python file
-To make the correction of your assignments easier, please use the provided `main.py` Python file. We will execute the `main.py` when correcting your submission. Also, make sure that all of your code is executed by the `main()` function in the file. You are, of course, free to add more functions and imports if required.
+2. **Extract Features from Data**
+    - Extract features from the provided data for training the machine learning model.
 
+3. **Choose and Train an ML Model**
+    - Select a machine learning model and train it using the extracted features.
 
-## Evaluation code
-To make it easier for you to evaluate your code, we provide a simple evlauation script at `evaluation.py`. If you export your predictions in the appropriate format, this script allows you to retrieve scores on the test set for your predicitons.
+4. **Save Results to a File**
+    - Save the results of the classification process to a file.
 
+## Learning Goals
 
-## Docker image
-To have a unified execution environment for you and us, we also provide a publicly available docker container to execute your submissions in. Please also use this container to run and test your code if possible. Follow the official instructions to set up Docker on your machine [^1]. Below are some useful commands (if you are using Windows, you might need to adapt those commands slightly, but the flags should stay mostly the same).
+- Modeling argumentative units as token sequences.
+- Text feature definition and extraction.
+- Applying machine learning techniques to mine argumentative units.
+- Evaluating the effectiveness of the approach.
 
-1. Running the `main.py` file inside the container.
-    ```shell
-    $ docker run --mount type=bind,src="$(pwd)",dst=/mnt --workdir="/mnt" -it registry.webis.de/code-lib/public-images/upb-ca22:1.0 sh -c 'python main.py'
-    ```
-2. Installing pip packages inside the container.
-    ```shell
-    $ docker run --mount type=bind,src="$(pwd)",dst=/mnt --workdir="/mnt" -it registry.webis.de/code-lib/public-images/upb-ca22:1.0 sh -c 'pip install scikit-learn'
-    ```
-3. Running a jupyter notebook inside the container that is accessible from your browser.
-    ```shell
-    $ docker run -p 8888:8888 --mount type=bind,src="$(pwd)",dst=/mnt --workdir="/mnt" -it registry.webis.de/code-lib/public-images/upb-ca22:1.0 sh -c 'jupyter notebook --allow-root --no-browser --ip=0.0.0.0 --notebook-dir=/mnt'
-    ```
-4. Evaluating predictions that are exported to `predictions.json`.
-    ```shell
-    $ docker run --mount type=bind,src="$(pwd)",dst=/mnt --workdir="/mnt" -it registry.webis.de/code-lib/public-images/upb-ca22:1.0 sh -c 'python evaluation.py --gt_bio_path data/test-bio.csv --pred_bio_path predictions.csv'
+## Usage
+
+1. Install the required Python packages:
+
+    ```bash
+    pip install pandas numpy nltk scikit-learn
     ```
 
+2. Run the Python script:
 
+    ```bash
+    python script.py
+    ```
 
-[^1]: https://docs.docker.com/engine/install/
+3. After execution, the results will be saved in a file named `predictions.csv`.
+
+## Requirements
+
+- Python 3.x
+- Pandas (`pandas`)
+- NumPy (`numpy`)
+- NLTK (`nltk`)
+- Scikit-learn (`scikit-learn`)
+
+## Note
+
+- Ensure that the data files (`test-bio.csv` and `train-bio.csv`) are placed in the `data` directory.
+- Adjust paths and parameters as needed in the code.
+- This script utilizes Naive Bayes and Support Vector Machine (SVM) classifiers for classification tasks.
+
