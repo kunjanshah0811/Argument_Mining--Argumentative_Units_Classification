@@ -13,7 +13,7 @@ def evaluation(path_to_ground_truth_bio, path_to_pred_bio):
     gt_bio = [x.split('\t') for x in open(path_to_ground_truth_bio).read().split('\n')]
     pred_bio = [x.split('\t') for x in open(path_to_pred_bio).read().split('\n')]
 
-    # Filter out tokens that doesn't need labels
+    # Filter out tokens that don't need labels
     gt_bio = [x for x in gt_bio if len(x) > 1]
     pred_bio = [x for x in pred_bio if len(x) > 1]
 
@@ -35,9 +35,9 @@ def evaluation(path_to_ground_truth_bio, path_to_pred_bio):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Evaluate your approach')
-    parser.add_argument('--gt_bio_path',"D:/Uni Study/CA/Tutorial/Tut_3 Arg Mining/data/train-bio.csv")
-    parser.add_argument('--pred_bio_path',"D:/Uni Study/CA/Tutorial/Tut_3 Arg Mining/data/test-bio.csv")
+    parser = argparse.ArgumentParser(description='Evaluate the approach')
+    parser.add_argument('--gt_bio_path',"./data/train-bio.csv")
+    parser.add_argument('--pred_bio_path',"./data/test-bio.csv")
 
     args = parser.parse_args()
 
