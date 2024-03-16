@@ -1,4 +1,4 @@
-Computational Argumentation 2022 -- Assignment 2
+Computational Argumentation 2022
 ================================================
 
 
