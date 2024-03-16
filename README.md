@@ -34,7 +34,7 @@ This repository contains Python code for classifying argumentative units using m
 2. Run the Python script:
 
     ```bash
-    python script.py
+    python main.py
     ```
 
 3. After execution, the results will be saved in a file named `predictions.csv`.
