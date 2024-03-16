@@ -1,4 +1,4 @@
-# Argumentative Units Classification
+# Argument Mining - Argumentative Units Classification
 
 This repository contains Python code for classifying argumentative units using machine learning techniques. The tasks involved in this project include choosing text features, extracting features from the data, choosing and training a machine learning model, and saving the results to a file.
 
